@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="649.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tcp.vitrola.FxMainController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label text="Player">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtDescription" prefHeight="115.0" prefWidth="557.0">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </TextArea>
+      <HBox alignment="CENTER" spacing="5.0" />
+      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="670.0" spacing="5.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#open" prefHeight="40.0" prefWidth="69.0" text="Open">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#save" prefHeight="40.0" prefWidth="77.0" text="Save" />
+               </children>
+            </HBox>
+            <Pane HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER_RIGHT" spacing="5.0">
+               <children>
+                  <ComboBox fx:id="ComboBoxInstruments" maxWidth="1.7976931348623157E308" onAction="#comboboxinstrumentomousereleased" prefHeight="40.0" prefWidth="272.0" />
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="||" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#play" prefHeight="40.0" prefWidth="40.0" text="&gt;" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Label text="Editor">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <HBox alignment="TOP_CENTER" prefHeight="162.0" prefWidth="612.0">
+         <children>
+            <VBox alignment="TOP_CENTER" spacing="5.0">
+               <children>
+                  <Label text="Notes" />
+                  <GridPane alignment="CENTER" hgap="5.0" vgap="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="184.0" minWidth="0.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="40.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="40.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="40.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteC" prefHeight="50.0" prefWidth="50.0" text="C">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteD" prefHeight="50.0" prefWidth="50.0" text="D" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteE" prefHeight="50.0" prefWidth="50.0" text="E" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteF" prefHeight="50.0" prefWidth="50.0" text="F" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteG" prefHeight="50.0" prefWidth="50.0" text="G" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteA" prefHeight="50.0" prefWidth="50.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteB" prefHeight="50.0" prefWidth="50.0" text="B" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteP" prefHeight="50.0" prefWidth="50.0" text="_" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseReleased="#noteReset" prefHeight="50.0" prefWidth="50.0" text="Reset" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </GridPane>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+            <Pane HBox.hgrow="ALWAYS" />
+            <VBox id=" " alignment="TOP_CENTER" spacing="5.0">
+               <children>
+                  <Label text="Intensidade" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#aumentarIntensidade" prefHeight="0.0" prefWidth="90.0" text="+" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#diminuirIntensidade" prefHeight="0.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox id=" " alignment="TOP_CENTER" prefHeight="133.0" prefWidth="90.0" spacing="5.0">
+               <children>
+                  <Label text="Volume" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#aumentarVolume" prefHeight="0.0" prefWidth="90.0" text="+" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#diminuirVolume" prefHeight="0.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="TOP_CENTER" spacing="5.0">
+               <children>
+                  <Label text="Oitava" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#aumentarOitava" prefHeight="0.0" prefWidth="90.0" text="+" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#diminuirOitava" prefHeight="0.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#oitavaPadrao" prefHeight="32.0" prefWidth="90.0" text="Default" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="TOP_CENTER" spacing="5.0">
+               <children>
+                  <Label text="BPM" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#aumentarBPM" prefHeight="0.0" prefWidth="90.0" text="+" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseReleased="#diminuirBPM" prefHeight="0.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </HBox>
+      <TextArea fx:id="textlog" editable="false" prefHeight="99.0" prefWidth="756.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </TextArea>
+   </children>
+</VBox>
